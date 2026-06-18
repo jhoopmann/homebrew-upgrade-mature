@@ -18,9 +18,9 @@ jobs:
       - name: Brew doctor
         run: brew doctor || true
 
-      - name: Load tap
+      - name: Trust & Load tap
         run: |
-          brew tap ${{ github.repository }}
+          brew trust ${{ github.repository }} && brew tap ${{ github.repository }}
 
       - name: Run command help
         run: |
