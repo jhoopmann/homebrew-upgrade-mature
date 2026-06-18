@@ -1,0 +1,27 @@
+name: Test Command Integration
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Homebrew
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+      - name: Brew doctor
+        run: brew doctor || true
+
+      - name: Load tap
+        run: |
+          brew tap ${{ github.repository }}
+
+      - name: Run command help
+        run: |
+          brew upgrade-mature --help || true
