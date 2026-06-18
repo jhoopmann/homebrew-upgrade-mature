@@ -4,7 +4,7 @@
 
 A Homebrew command extension that delays upgrades of recently modified formulae.
 
-Install via Homebrew tap:
+Install via Homebrew tap: \
 `brew trust jhoopmann/upgrade-mature` \
 `brew tap jhoopmann/upgrade-mature`
 
@@ -44,6 +44,7 @@ For each outdated package:
 
 ### 1. Tap the repository
 ```bash
+brew trust jhoopmann/upgrade-mature
 brew tap jhoopmann/upgrade-mature
 ```
 
