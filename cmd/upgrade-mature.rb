@@ -67,7 +67,7 @@ module Homebrew
 
     sig { void }
     def run
-      outdated_formulas = get_outdated_formulas.to_a
+      outdated_formulas = get_outdated_formulas
 
       if outdated_formulas.empty?
         puts Formatter.headline("No outdated formulas found!", color: :green)
@@ -103,9 +103,9 @@ module Homebrew
             greedy_latest: args.greedy_latest?,
             greedy_auto_updates: args.greedy_auto_updates?
           )
-        end unless args.formula?) || []
+        end.to_a unless args.formula?) || []
 
-      formulas = (Formula.installed.select(&:outdated?) unless args.cask?) || []
+      formulas = (Formula.installed.select(&:outdated?).to_a unless args.cask?) || []
 
       (casks + formulas).filter do |f|
         args.named.empty? || args.named.include?(f.is_a?(Formula) ? f.name : f.token)
@@ -243,7 +243,7 @@ module Homebrew
 
     sig { params(evaluated_formula: EvaluatedFormula).void }
     def puts_evaluated_formula(evaluated_formula) 
-      puts "#{evaluated_formula.formula_name} (#{evaluated_formula.committed_date || "no commits found"})"
+      puts "#{evaluated_formula.formula_name} => #{evaluated_formula.version} (#{evaluated_formula.committed_date || "no commits found"})"
     end
 
     sig { params(
