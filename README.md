@@ -1,11 +1,11 @@
-# brew-upgrade-mature
+# homebrew-upgrade-mature
 ![Homebrew](https://img.shields.io/badge/homebrew-command-orange)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
 A Homebrew command extension that delays upgrades of recently modified formulae.
 
 Install via Homebrew tap:
-`brew tap jhoopmann/brew-upgrade-mature`
+`brew tap jhoopmann/upgrade-mature`
 
 Usage: \
 `brew upgrade-mature` \
@@ -41,7 +41,7 @@ For each outdated package:
 
 ### 1. Tap the repository
 ```bash
-brew tap jhoopmann/brew-upgrade-mature
+brew tap jhoopmann/upgrade-mature
 ```
 
 ---
