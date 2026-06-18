@@ -5,6 +5,7 @@
 A Homebrew command extension that delays upgrades of recently modified formulae.
 
 Install via Homebrew tap:
+`brew trust jhoopmann/upgrade-mature` \
 `brew tap jhoopmann/upgrade-mature`
 
 Usage: \
