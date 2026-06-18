@@ -9,6 +9,8 @@ Install via Homebrew tap:
 `brew tap jhoopmann/upgrade-mature`
 
 Usage: \
+(`brew update`)\
+\
 `brew upgrade-mature` \
 `brew upgrade-mature --greedy` \
 `brew upgrade-mature --no-ask` \
