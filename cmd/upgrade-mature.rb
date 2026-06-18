@@ -213,6 +213,8 @@ module Homebrew
       extras << "--skip-cask-deps" if args.skip_cask_deps?
       extras << "--require-sha" if args.require_sha?
       extras << "--no-binaries" unless args.binaries?
+      extras << "--cask" if args.cask?
+      extras << "--formula" if args.formula?
 
       system "brew", "upgrade", *extras, *names
     end
